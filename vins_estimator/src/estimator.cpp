@@ -195,7 +195,7 @@ void Estimator::processImage(const map<int, vector<pair<int, Eigen::Matrix<doubl
                //更新初始化时间戳
                initial_timestamp = header.stamp.toSec();
             }
-            if(result)//初始化成功
+            if(result)//初始化成功则进行一次非线性优化
             {
                 //先进行一次滑动窗口非线性优化，得到当前帧与第一帧的位姿
                 solver_flag = NON_LINEAR;
